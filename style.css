@@ -1,0 +1,151 @@
+:root {
+
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-primary-700: hsl(158, 36%, 20%);
+    --clr-primary-900: hsl(212, 21%, 14%);
+    
+    --clr-secondary-400: hsl(30, 38%, 92%);
+
+    --clr-neutral-000: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsl(228, 12%, 48%);
+ 
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-accent: 'Fraunces', serif;
+
+    --fs-300: 0.7rem;
+    --fs-400: 0.875rem;
+    --fs-700: 2rem;
+    
+    --fw-400: 500;
+    --fw-700: 700;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+}
+
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, button {
+    font: inherit;
+}
+
+p, h1, h2 {
+    overflow-wrap: break-word;
+}
+
+html {
+    color-scheme: light;
+}
+
+.text-neutral-400 {
+    color: var(--clr-neutral-400);
+}
+
+.text-primary-900 {
+    color: var(--clr-primary-900);
+}
+
+.text-accent {
+    color: var(--clr-primary-400);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    background: var(--clr-secondary-400);
+}
+
+main {
+    max-width: min(90%, 37rem);
+    @media (max-width: 16em) {
+        max-width: 100%;
+    }
+}
+
+.product-card {
+    display: grid;
+    background: var(--clr-neutral-000);
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    @media (max-width: 16em) {
+        overflow: auto;
+        border-radius: unset;
+    }
+
+    @media (min-width: 55em) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & p {
+        line-height: 1.6;
+    }
+
+    & h1 , & span{
+        line-height: 0.95;
+        font-family: var(--ff-accent);
+        font-weight: var(--fw-700);
+        font-size:  var(--fs-700);
+    }
+
+    & h2 {
+        font-size: var(--fs-300);
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+    }
+
+    & p:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-block: 0.5rem;
+    }
+
+    .button {
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        border: none;
+        border-radius: 0.5em;
+        background: var(--clr-primary-400);
+        color: var(--clr-neutral-000);
+        padding-block: 1em;
+    }
+
+    .button:hover, .button:focus {
+        background: var(--clr-primary-700);
+    }
+
+    @media (min-width: 55em) {
+        padding: 2rem;
+        gap: 1.5rem;
+
+        & p {
+            max-width: 25ch;
+        }
+    
+        & h1 {
+            max-width: 10ch;
+        }
+    }
+}
